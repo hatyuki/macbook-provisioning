@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+anyframe-source-ghq-repository \
+    | anyframe-selector-auto \
+    | anyframe-action-insert

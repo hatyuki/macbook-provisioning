@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+git ls-files 2> /dev/null \
+    | sort -u \
+    | anyframe-selector-auto \
+    | anyframe-action-insert

@@ -1,0 +1,6 @@
+/pack/jetpack/opt/
+!/pack/jetpack/opt/vim-jetpack/
+
+.netrwhist
+history
+save_undo

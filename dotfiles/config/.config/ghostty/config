@@ -1,0 +1,112 @@
+# ==============================================================================
+# Application
+# ==============================================================================
+
+# コマンド実行完了後もターミナルを開いたままにする
+wait-after-command = true
+
+# シェル統合で有効化する機能
+shell-integration-features = no-cursor, sudo, title, no-ssh-env, ssh-terminfo
+
+
+# ==============================================================================
+# Clipboard
+# ==============================================================================
+
+clipboard-read  = allow
+clipboard-write = allow
+
+
+# ==============================================================================
+# Notifications
+# ==============================================================================
+
+# Focus していないターミナルで 60s 以上実行しているコマンドが終了したら通知を送る
+notify-on-command-finish        = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after  = 60s
+
+
+# ==============================================================================
+# Window
+# ==============================================================================
+
+# 新しいタブ・ウィンドウに $CWD を引き継がない
+window-inherit-working-directory = false
+tab-inherit-working-directory    = false
+split-inherit-working-directory  = true
+
+window-theme     = dark
+window-padding-x = 2
+window-padding-y = 0
+
+# パディングをうまいこと分散する
+window-padding-balance = true
+
+# 背景の透過度
+background-opacity = 0.95
+
+# 背景をぼかしの強さ
+background-blur-radius = 5
+
+# 初期ウィンドウサイズ
+window-height = 32
+window-width  = 128
+
+
+# ==============================================================================
+# Colors
+# ==============================================================================
+
+theme = nord
+
+# カーソルを点滅させない
+cursor-style-blink = true
+
+
+# ==============================================================================
+# Fonts
+# ==============================================================================
+
+font-size = 14
+font-family = "Noto Sans Mono CJK JP"
+font-family = "Noto Emoji"
+
+# フォントを太く描画する (macOS)
+font-thicken = true
+
+# フォントを太くする強度 (0〜256)
+font-thicken-strength = 64
+
+
+# ==============================================================================
+# Keybinds
+# ==============================================================================
+keybind = cmd+left=previous_tab
+keybind = cmd+right=next_tab
+
+keybind = ctrl+f>-=new_split:down
+keybind = ctrl+f>h=goto_split:left
+keybind = ctrl+f>j=goto_split:down
+keybind = ctrl+f>k=goto_split:up
+keybind = ctrl+f>l=goto_split:right
+keybind = ctrl+f>n=new_tab
+keybind = ctrl+f>shift+¥=new_split:right
+keybind = ctrl+f>0=ignore
+keybind = ctrl+f>1=goto_tab:1
+keybind = ctrl+f>2=goto_tab:2
+keybind = ctrl+f>3=goto_tab:3
+keybind = ctrl+f>4=goto_tab:4
+keybind = ctrl+f>5=goto_tab:5
+
+keybind = shift+enter=text:\n
+
+keybind = global:cmd+shift+t=toggle_quick_terminal
+
+
+# ==============================================================================
+# Mouse
+# ==============================================================================
+
+# タイピング中はマウスを非表示にする
+mouse-hide-while-typing = true

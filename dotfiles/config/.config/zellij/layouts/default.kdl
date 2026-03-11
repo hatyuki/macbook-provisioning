@@ -1,0 +1,113 @@
+layout {
+    default_tab_template {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        /*
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                // Nord theme
+                color_nord00 "#2E3440"
+                color_nord01 "#3B4252"
+                color_nord02 "#434C5E"
+                color_nord03 "#4C566A"
+                color_nord04 "#D8DEE9"
+                color_nord05 "#E5E9F0"
+                color_nord06 "#ECEFF4"
+                color_nord07 "#8FBCBB"
+                color_nord08 "#88C0D0"
+                color_nord09 "#81A1C1"
+                color_nord10 "#5E81AC"
+                color_nord11 "#BF616A"
+                color_nord12 "#D08770"
+                color_nord13 "#EBCB8B"
+                color_nord14 "#A3BE8C"
+                color_nord15 "#B48EAD"
+
+                format_left "{mode}"
+
+                mode_normal "#[fg=$nord02]#[bg=$nord02,fg=$nord04]󰘴 +#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]L#[bg=$nord02,fg=$nord10]#[bg=$nord02] Lock#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]S#[bg=$nord02,fg=$nord10]#[bg=$nord02] Session#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]T#[bg=$nord02,fg=$nord10]#[bg=$nord02] Tab#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]P#[bg=$nord02,fg=$nord10]#[bg=$nord02] Pane#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]/#[bg=$nord02,fg=$nord10]#[bg=$nord02] Search#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]R#[bg=$nord02,fg=$nord10]#[bg=$nord02] Resize#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]M#[bg=$nord02,fg=$nord10]#[bg=$nord02] Move#[fg=$nord02] #[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]Q#[bg=$nord02,fg=$nord10]#[bg=$nord02] Quit#[fg=$nord02]"
+                mode_locked       "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_tab          "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_pane "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10] #[fg=$nord14]#[bg=$nord14,fg=$nord00,bold]n#[bg=$nord02,fg=$nord14]#[bg=$nord02] New #[fg=$nord02] #[fg=$nord14]#[bg=$nord14,fg=$nord00,bold]x#[bg=$nord02,fg=$nord14]#[bg=$nord02] Close #[fg=$nord02] #[fg=$nord14]#[bg=$nord14,fg=$nord00,bold]p#[bg=$nord02,fg=$nord14]#[bg=$nord02] Pin #[fg=$nord02] #[fg=$nord14]#[bg=$nord14,fg=$nord00,bold]󰁁#[bg=$nord02,fg=$nord14]#[bg=$nord02] Resize #[fg=$nord02]"
+                mode_session      "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_resize       "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_scroll       "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_enter_search "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_search       "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_rename_tab   "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_rename_pane  "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_move         "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_prompt       "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+                mode_tmux         "#[fg=$nord10]#[bg=$nord10,fg=$nord04,bold]{name}#[fg=$nord10]"
+            }
+        }
+        */
+        children
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                // Nord theme
+                color_nord00 "#2E3440"
+                color_nord01 "#3B4252"
+                color_nord02 "#434C5E"
+                color_nord03 "#4C566A"
+                color_nord04 "#D8DEE9"
+                color_nord05 "#E5E9F0"
+                color_nord06 "#ECEFF4"
+                color_nord07 "#8FBCBB"
+                color_nord08 "#88C0D0"
+                color_nord09 "#81A1C1"
+                color_nord10 "#5E81AC"
+                color_nord11 "#BF616A"
+                color_nord12 "#D08770"
+                color_nord13 "#EBCB8B"
+                color_nord14 "#A3BE8C"
+                color_nord15 "#B48EAD"
+
+                format_left   "{mode} #[fg=$nord02]{tabs}#[fg=$nord02]"
+                format_center "#[fg=$nord13]{session}"
+                format_right  "#[fg=$nord09,bold]🤍 {datetime} #[fg=#76FF03]↖  "
+                format_space  ""
+
+                // Mode
+                mode_normal  "#[fg=$nord11]#[bg=$nord11,fg=$nord01,bold] Ｎ #[fg=$nord11]"
+                mode_locked  "#[fg=$nord07]#[bg=$nord08,fg=$nord01,bold]   #[fg=$nord07]"
+                mode_tab     "#[fg=$nord11]#[bg=$nord11,fg=$nord01,bold] Ｔ #[fg=$nord11]"
+                mode_pane    "#[fg=$nord11]#[bg=$nord11,fg=$nord01,bold] Ｐ #[fg=$nord11]"
+                mode_session "#[fg=$nord11]#[bg=$nord11,fg=$nord01,bold] Ｓ #[fg=$nord11]"
+                //mode_resize       "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold] Ｒ #[fg=$nord03]"
+                //mode_scroll       "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_enter_search "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_search       "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_rename_tab   "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_rename_pane  "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_move         "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_prompt       "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+                //mode_rename_pane  "#[fg=$nord03]#[bg=$nord03,fg=$nord11,bold]  #[fg=$nord03]"
+
+                // formatting for inactive tabs
+                tab_normal              "#[bg=$nord02,fg=$nord04] #{index} {floating_indicator}"
+                tab_normal_fullscreen   "#[bg=$nord02,fg=$nord04] #{index} {fullscreen_indicator}"
+                tab_normal_sync         "#[bg=$nord02,fg=$nord04] #{index} {sync_indicator}"
+
+                // formatting for the current active tab
+                tab_active              "#[bg=$nord02,fg=$nord08,bold] #{index} {floating_indicator}"
+                tab_active_fullscreen   "#[bg=$nord02,fg=$nord08,bold] #{index} {fullscreen_indicator}"
+                tab_active_sync         "#[bg=$nord02,fg=$nord08,bold] #{index} {sync_indicator}"
+
+                // separator between the tabs
+                tab_separator           "#[bg=$nord02,fg=$nord13,bold] ⋮ "
+
+                // indicators
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " "
+                tab_floating_indicator   "↗ "
+
+                // Datetime
+                datetime          "#[fg=$nord04]{format}"
+                datetime_format   "%A, %B %d, %Y %H:%M"
+                datetime_timezone "Asia/Tokyo"
+            }
+        }
+    }
+}

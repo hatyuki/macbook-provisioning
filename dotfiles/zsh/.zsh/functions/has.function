@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+# has_command returns true if $1 as a shell function exists
+(( $+functions[${1:?too few argument}] ))
+return $status
+
+# vim: ft=zsh

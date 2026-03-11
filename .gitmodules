@@ -1,0 +1,3 @@
+[submodule "dotfiles/vim/.vim/pack/jetpack/opt/vim-jetpack"]
+	path = dotfiles/vim/.vim/pack/jetpack/opt/vim-jetpack
+	url = https://github.com/tani/vim-jetpack.git

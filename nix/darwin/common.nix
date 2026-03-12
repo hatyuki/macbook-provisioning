@@ -10,7 +10,7 @@
         enable = true;
         onActivation.cleanup = "none";
         caskArgs = {
-          appdir = "~/Applications";
+          appdir = "/Applications";
           require_sha = true;
         };
 

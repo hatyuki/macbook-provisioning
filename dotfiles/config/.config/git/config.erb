@@ -1,10 +1,10 @@
 [alias]
-    tree = log --graph --pretty=oneline --abbrev-commit --decorate
-    ch   = rev-parse --short --verify HEAD
+	tree = log --graph --pretty=oneline --abbrev-commit --decorate
+	ch = rev-parse --short --verify HEAD
 [color]
-    ui = true
+	ui = true
 [core]
-    pager = lv -c
+	pager = lv -c
 	sparseCheckout = true
 	quotepath = false
 [credential "https://source.developers.google.com"]
@@ -15,7 +15,7 @@
 	process = git-lfs filter-process
 	required = true
 [ghq]
-    root = ~/Sources
+	root = ~/Sources
 [init]
 	defaultBranch = main
 [merge]
@@ -23,9 +23,8 @@
 [pull]
 	rebase = false
 	ff = only
-[user]
-	useConfigOnly = true
-	name = hatyuki
-	email = hatyuki29@gmail.com
+
+[include]
+	path = ~/.config/git/includes/user.<%= @node %>
 
 ; vim: ft=gitconfig

@@ -3,6 +3,8 @@ include_recipe "../definitions/stow"
 
 dotfiles = "#{ROOT_DIR}/dotfiles"
 
+directory "#{ENV["HOME"]}/.config"
+
 # stow
 [
   :config,

@@ -24,8 +24,8 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update flake.lock"
-          title: "chore: update flake.lock"
+          commit-message: "chore(nix): update flake.lock"
+          title: "chore(nix): update flake.lock"
           body: "Automated update of flake.lock"
           branch: "update-flake-lock"
           delete-branch: true

@@ -75,8 +75,10 @@
                 Bluetooth = true;              # Menu bar に Bluetooth コントロールを表示する
             };
 
-            # Dock を自動的に非表示にする
-            dock.autohide = true;
+            dock = {
+                autohide   = true;   # Dock を自動的に非表示にする
+                mru-spaces = false;  # 最近使ったアプリの表示はしない
+            };
 
             finder = {
                 AppleShowAllExtensions = true;    # 全ての拡張子を表示
@@ -99,6 +101,50 @@
                 ActuationStrength        = 0;     # Quiet Click を有効化する
                 Clicking                 = true;  # Tap to Click を有効化する
                 TrackpadThreeFingerDrag = true;  # 三指ドラッグを有効化する
+            };
+
+            CustomUserPreferences = {
+                # ショートカットキー
+                "com.apple.symbolichotkeys" = {
+                    AppleSymbolicHotKeys = {
+                        # 64: Spotlight の表示を無効化 (Cmd + Space)
+                        "64" = {
+                            enabled = false;
+                            value = {
+                                parameters = [ 32 49 1048576 ];
+                                type = "standard";
+                            };
+                        };
+                        # 65: Finder の検索ウィンドウ表示を無効化 (Opt + Cmd + Space)
+                        "65" = {
+                            enabled = false;
+                            value = {
+                                parameters = [ 32 49 1572864 ];
+                                type = "standard";
+                            };
+                        };
+                    };
+                };
+                # Siri を無効化する
+                "com.apple.assistant.support" = {
+                    "Assistant Enabled" = false;
+                };
+
+                # macOS のアップデート後に Siri の設定画面が出るのを防ぐ
+                "com.apple.SetupAssistant" = {
+                    DidSeeSiriSetup = true;
+                };
+
+                # Siri のアイコンを非表示にし、有効化の勧誘を拒否する
+                "com.apple.Siri" = {
+                    StatusMenuVisible     = false;
+                    UserHasDeclinedEnable = true;
+                };
+
+                # Spotlight アイコンを非表示にする
+                "com.apple.Spotlight" = {
+                    "NSStatusItem Visible Item-0" = false;
+                };
             };
         };
     };

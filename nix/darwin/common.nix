@@ -8,7 +8,7 @@
 
     homebrew = {
         enable = true;
-        onActivation.cleanup = "none";
+        onActivation.cleanup = "zap";
         caskArgs = {
           appdir = "/Applications";
           require_sha = true;
@@ -17,6 +17,7 @@
         taps = [];
 
         casks = [
+            "1password"
             "ghostty"
             "google-chrome"
             "google-japanese-ime"
@@ -36,8 +37,7 @@
             options = "--delete-older-than 3d";
         };
 
-        # ストレージの最適化
-        optimise.automatic = true;
+        optimise.automatic = true; # ストレージの最適化
 
         # Flakes を使うための設定 (`nix run` 時の `--extra-experimental-features` を不要に)
         settings.experimental-features = [ "nix-command" "flakes" ];
@@ -57,9 +57,10 @@
 
     security = {
         pam = {
+            # ターミナルでも TouchID を使えるように
             services.sudo_local = {
-                enable = true;
-                reattach = true;
+                enable      = true;
+                reattach    = true;
                 touchIdAuth = true;
             };
         };
@@ -70,22 +71,34 @@
 
         defaults = {
             controlcenter = {
-                # Menu bar にバッテリー残量 (%) を表示する
-                BatteryShowPercentage = true;
-
-                # Menu bar に Bluetooth コントロールを表示する
-                Bluetooth = true;
+                BatteryShowPercentage = true;  # Menu bar にバッテリー残量 (%) を表示する
+                Bluetooth = true;              # Menu bar に Bluetooth コントロールを表示する
             };
 
             # Dock を自動的に非表示にする
             dock.autohide = true;
 
-            NSGlobalDomain = {
-                # F1 / F2 などのキーを標準のファンクションキーとして使用する
-                "com.apple.keyboard.fnState" = true;
+            finder = {
+                AppleShowAllExtensions = true;    # 全ての拡張子を表示
+                FXPreferredViewStyle   = "Nlsv";  # リストビューをデフォルトにする
+                ShowPathbar            = true;    # パスバーを表示
+                ShowStatusBar          = true;    # ステータスバーを表示
+            };
 
-                # Trackpad の追跡速度 (0.0 〜 3.0)
-                "com.apple.trackpad.scaling" = 3.0;
+            NSGlobalDomain = {
+                # キーリピートの設定を好みにする
+                InitialKeyRepeat = 25;
+                KeyRepeat = 2;
+
+                "com.apple.keyboard.fnState"  = true;  # F1 / F2 などのキーを標準のファンクションキーとして使用する
+                "com.apple.mouse.tapBehavior" = 1;     # Tap to Click を有効化する
+                "com.apple.trackpad.scaling"  = 3.0;   # Trackpad の追跡速度を最大値にする (0.0 〜 3.0)
+            };
+
+            trackpad = {
+                ActuationStrength        = 0;     # Quiet Click を有効化する
+                Clicking                 = true;  # Tap to Click を有効化する
+                TrackpadThreeFingerDrag = true;  # 三指ドラッグを有効化する
             };
         };
     };

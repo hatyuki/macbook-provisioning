@@ -2,9 +2,9 @@
     homebrew = {
         casks = [
             "appcleaner"
+            "cleanshot"
             "displaylink"
             "drawio"
-            "figma"
             "microsoft-auto-update"
             "microsoft-teams"
             "onedrive"

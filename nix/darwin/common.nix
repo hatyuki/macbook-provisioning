@@ -76,8 +76,9 @@
             };
 
             dock = {
-                autohide   = true;   # Dock を自動的に非表示にする
-                mru-spaces = false;  # 最近使ったアプリの表示はしない
+                autohide     = true;   # Dock を自動的に非表示にする
+                mru-spaces   = false;  # Spaces の再配置をしない
+                show-recents = false;  # 最近使ったアプリの表示はしない
             };
 
             finder = {

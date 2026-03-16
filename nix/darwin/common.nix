@@ -89,6 +89,8 @@
             };
 
             NSGlobalDomain = {
+                ApplePressAndHoldEnabled = false; # Press-and-Hold を無効にする
+
                 # キーリピートの設定を好みにする
                 InitialKeyRepeat = 25;
                 KeyRepeat = 2;

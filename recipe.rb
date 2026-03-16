@@ -12,3 +12,10 @@ execute "nix run nix-darwin" do
 end
 
 include_recipe "mitamae/recipes/dotfiles"
+
+file "#{ROOT_DIR}/.git/config" do
+  action :edit
+  block do |content|
+    content.gsub!("https://github.com/hatyuki/", "git@github.com:hatyuki/")
+  end
+end

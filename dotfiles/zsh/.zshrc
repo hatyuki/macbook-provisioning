@@ -214,6 +214,3 @@ if (command -v zprof > /dev/null); then
 fi
 
 # vim:ft=zsh
-
-# Added by Antigravity
-export PATH="/Users/hatyuki/.antigravity/antigravity/bin:$PATH"

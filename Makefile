@@ -1,5 +1,5 @@
 LOG_LEVEL ?= debug
-NODES_DIR ?= nodes
+NODES_DIR ?= mitamae/nodes
 TARGETS   ?= $(notdir $(basename $(wildcard $(NODES_DIR)/*.yaml)))
 RECIPE    ?= recipe.rb
 .DEFAULT_GOAL := help
@@ -25,7 +25,7 @@ $(TARGETS): bin/mitamae ## provisioning
 ### Install mitamae
 
 bin/mitamae: ## install mitamae
-	./scripts/install-mitamae.bash
+	@./scripts/install-mitamae.bash
 
 
 ### Cleanup

@@ -21,6 +21,7 @@
             "ghostty"
             "google-chrome"
             "google-japanese-ime"
+            "hiddenbar"
             "jetbrains-toolbox"
             "raycast"
             "slack"
